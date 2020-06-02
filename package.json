@@ -1,5 +1,5 @@
 {
-  "name": "react-native-unified-sdk",
+  "name": "@itemku/react-native-unified-sdk",
   "title": "React Native Unified SDK",
   "version": "0.0.1",
   "description": "TODO",
@@ -24,8 +24,8 @@
     "react-native"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "Rionardo",
+    "email": "rio@fivejack.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",

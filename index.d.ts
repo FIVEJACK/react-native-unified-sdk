@@ -1,5 +1,5 @@
 import { NativeModules } from "react-native";
 
-const { unifiedSDK } = NativeModules as { unifiedSDK: number };
+const { UnifiedSDK } = NativeModules as { UnifiedSDK: any };
 
-export default unifiedSDK;
+export default UnifiedSDK;
