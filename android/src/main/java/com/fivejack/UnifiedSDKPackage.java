@@ -10,10 +10,10 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 
-public class UnifiedSdkPackage implements ReactPackage {
+public class UnifiedSDKPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(new UnifiedSdkModule(reactContext));
+        return Arrays.<NativeModule>asList(new UnifiedSDKModule(reactContext));
     }
 
     @Override

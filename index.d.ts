@@ -1,5 +1,10 @@
-import { NativeModules } from "react-native";
+export function initSDK(
+  zendeskUrl: string,
+  appId: string,
+  clientId: string
+): void;
 
-const { UnifiedSDK } = NativeModules as { UnifiedSDK: any };
-
-export default UnifiedSDK;
+export function setAnonymousIdentity(name: string, email: string): void;
+export function showMessagingActivity(useAnswerBot: boolean): void;
+export function showCreateTicket(subject: string): void;
+export function showTicketList(): void;
