@@ -1,7 +1,7 @@
 {
   "name": "@itemku/react-native-unified-sdk",
   "title": "React Native Unified SDK",
-  "version": "0.1.1",
+  "version": "0.3.0",
   "description": "Zendesk Unified SDK for React Native",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -21,7 +21,11 @@
     "baseUrl": "https://github.com/github_account/react-native-unified-sdk"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "zendesk",
+    "unified-sdk",
+    "itemku",
+    "fivejack"
   ],
   "author": {
     "name": "Rionardo",

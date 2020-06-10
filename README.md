@@ -38,8 +38,23 @@ UnifiedSDK.initSDK("https://itemku.zendesk.com", "testId", "testKey");
 ```jsx
 UnifiedSDK.setAnonymousIdentity("itemku", "itemku@itemku.com"); // set anonymous identity
 UnifiedSDK.showMessagingActivity(useAnswerBot); // show messaging activity
-UnifiedSDK.showCreateTicket("itemku.com"); // create ticket with subject
-UnifiedSDK.showTicketList(); // show ticket list
+UnifiedSDK.showCreateTicket({
+  subject: "itemku Hebat",
+  tags: ["itemku", "hebat"],
+  fields: [
+    {
+      id: 12345678,
+      value: "rionardo",
+    },
+  ],
+}); // create ticket with configuration
+UnifiedSDK.showTicketList({
+  isContactUsVisible: false,
+  showConversationButton: false,
+  labels: ["rionardo", "itemku"],
+  categoryIds: [1231, 1232],
+  sectionIds: [12345, 123456],
+}); // show ticket list
 ```
 
 ## Customize Theme
