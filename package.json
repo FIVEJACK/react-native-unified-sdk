@@ -1,7 +1,7 @@
 {
   "name": "@itemku/react-native-unified-sdk",
   "title": "React Native Unified SDK",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Zendesk Unified SDK for React Native",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -18,8 +18,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-unified-sdk.git",
-    "baseUrl": "https://github.com/github_account/react-native-unified-sdk"
+    "url": "git+https://github.com/FIVEJACK/react-native-unified-sdk.git",
+    "baseUrl": "https://github.com/FIVEJACK/react-native-unified-sdk"
   },
   "keywords": [
     "react-native",
