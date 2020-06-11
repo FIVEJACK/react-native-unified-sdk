@@ -1,7 +1,7 @@
 {
   "name": "@itemku/react-native-unified-sdk",
   "title": "React Native Unified SDK",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Zendesk Unified SDK for React Native",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -9,6 +9,7 @@
     "README.md",
     "android",
     "index.js",
+    "index.d.ts",
     "ios",
     "react-native-unified-sdk.podspec"
   ],
