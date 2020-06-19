@@ -47,12 +47,6 @@ public class UnifiedSDKModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
-        // TODO: Implement some actually useful functionality
-        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
-    }
-
-    @ReactMethod
     public void setAnonymousIdentity(String nameIdentifier, String emailIdentifier) {
         Identity identity = new AnonymousIdentity.Builder().withNameIdentifier(nameIdentifier)
                 .withEmailIdentifier(emailIdentifier).build();

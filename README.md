@@ -28,7 +28,7 @@ maven {
 Init Zendesk in index.js
 
 ```jsx
-import UnifiedSDK from "@itemku/react-native-unified-sdk";
+import {UnifiedSDK} from "@itemku/react-native-unified-sdk";
 
 UnifiedSDK.initSDK("https://itemku.zendesk.com", "testId", "testKey");
 ```
