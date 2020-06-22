@@ -17,9 +17,40 @@ HelpCenterProvider.getSections = (categoryId) => {
 
 }
 
+HelpCenterProvider.getArticles = (sectionId) => {    
+    
+    return HelpCenterProvider.getArticlesPromise(sectionId).catch((error) => {        
+      throw new Error(getError(error));      
+  });  
+
+}
+
+HelpCenterProvider.getSuggestedArticles = (search) => {    
+    
+    return HelpCenterProvider.getSuggestedArticlesPromise(search).catch((error) => {        
+      throw new Error(getError(error));      
+  });  
+
+}
+
+HelpCenterProvider.downvoteArticle = (articleId) => {    
+    
+    return HelpCenterProvider.downvoteArticlePromise(articleId).catch((error) => {        
+      throw new Error(getError(error));      
+  });  
+
+}
+
+HelpCenterProvider.upvoteArticle = (articleId) => {    
+    
+    return HelpCenterProvider.upvoteArticlePromise(articleId).catch((error) => {        
+      throw new Error(getError(error));      
+  });  
+
+}
 
 const getError = (error) => {  
-    const errorObject = JSON.parse(errorBody);           
+    const errorObject = error;           
     return errorObject;
 };
 

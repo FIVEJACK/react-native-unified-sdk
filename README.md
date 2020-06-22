@@ -28,9 +28,13 @@ maven {
 Init Zendesk in index.js
 
 ```jsx
-import {UnifiedSDK} from "@itemku/react-native-unified-sdk";
+import {
+  UnifiedSDK,
+  HelpCenterProvider,
+} from "@itemku/react-native-unified-sdk";
 
 UnifiedSDK.initSDK("https://itemku.zendesk.com", "testId", "testKey");
+HelpCenterProvider.init();
 ```
 
 ### Call Function
@@ -55,6 +59,54 @@ UnifiedSDK.showTicketList({
   categoryIds: [1231, 1232],
   sectionIds: [12345, 123456],
 }); // show ticket list
+
+//Help Center API Get Categories
+const getCategories = async () => {
+  let result = await HelpCenterProvider.getAllCategories();
+  console.log(result);
+};
+
+//Help Center API Get Sections
+const getSections = async () => {
+  let result = await HelpCenterProvider.getSections(202586637);
+  console.log(result);
+};
+
+//Help Center API Get Articles
+const getArticles = async () => {
+  let result = await HelpCenterProvider.getArticles(203885138);
+  console.log(result);
+};
+
+//Help Center API Get Suggested Articles
+const getSuggestedArticles = async () => {
+  try {
+    let result = await HelpCenterProvider.getSuggestedArticles("itemku");
+    console.log(result);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+//Help Center API upvote article
+const upvoteArticle = async () => {
+  try {
+    let result = await HelpCenterProvider.upvoteArticle(115002238612);
+    console.log(result);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+//Help Center API downvote article
+const downvoteArticle = async () => {
+  try {
+    let result = await HelpCenterProvider.downvoteArticle(115002238612);
+    console.log(result);
+  } catch (e) {
+    console.log(e);
+  }
+};
 ```
 
 ## Customize Theme

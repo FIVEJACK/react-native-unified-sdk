@@ -43,6 +43,10 @@ import com.zendesk.service.ZendeskCallback;
 import zendesk.support.Category;
 import zendesk.support.Section;
 import zendesk.support.Article;
+import zendesk.support.ArticleVote;
+import zendesk.support.SuggestedArticleResponse;
+import zendesk.support.SimpleArticle;
+import zendesk.support.SuggestedArticleSearch;
 import com.zendesk.service.ErrorResponse;
 import com.facebook.react.bridge.Promise;
 
@@ -97,6 +101,98 @@ public class HelpCenterProviderSDKModule extends ReactContextBaseJavaModule {
                 try {
                     promise.resolve(JSONHelper
                             .convertJsonToArray(new JSONArray(JSONHelper.createDefaultGson().toJson(sections))));
+                } catch (JSONException e) {
+                    promise.reject("", e.getMessage());
+
+                }
+            }
+
+            @Override
+            public void onError(ErrorResponse errorResponse) {
+                promise.reject("", errorResponse.getReason());
+            }
+        });
+    }
+
+    @ReactMethod
+    public void getArticlesPromise(Double sectionId, final Promise promise) {
+        Long sectId = sectionId.longValue();
+        this.provider.getArticles(sectId, new ZendeskCallback<List<Article>>() {
+            @Override
+            public void onSuccess(List<Article> articles) {
+                try {
+                    promise.resolve(JSONHelper
+                            .convertJsonToArray(new JSONArray(JSONHelper.createDefaultGson().toJson(articles))));
+                } catch (JSONException e) {
+                    promise.reject("", e.getMessage());
+
+                }
+            }
+
+            @Override
+            public void onError(ErrorResponse errorResponse) {
+                promise.reject("", errorResponse.getReason());
+            }
+        });
+    }
+
+    @ReactMethod
+    public void getSuggestedArticlesPromise(String searchQuery, final Promise promise) {
+        SuggestedArticleSearch.Builder builder = new SuggestedArticleSearch.Builder();
+        builder.withQuery(searchQuery);
+
+        SuggestedArticleSearch search = builder.build();
+
+        this.provider.getSuggestedArticles(search, new ZendeskCallback<SuggestedArticleResponse>() {
+            @Override
+            public void onSuccess(SuggestedArticleResponse response) {
+                try {
+                    promise.resolve(JSONHelper
+                            .convertJsonToMap(new JSONObject(JSONHelper.createDefaultGson().toJson(response))));
+                } catch (JSONException e) {
+                    promise.reject("", e.getMessage());
+
+                }
+            }
+
+            @Override
+            public void onError(ErrorResponse errorResponse) {
+                promise.reject("", errorResponse.getReason());
+            }
+        });
+    }
+
+    @ReactMethod
+    public void upvoteArticlePromise(Double articleId, final Promise promise) {
+        Long artId = articleId.longValue();
+        this.provider.upvoteArticle(artId, new ZendeskCallback<ArticleVote>() {
+            @Override
+            public void onSuccess(ArticleVote article) {
+                try {
+                    promise.resolve(JSONHelper
+                            .convertJsonToMap(new JSONObject(JSONHelper.createDefaultGson().toJson(article))));
+                } catch (JSONException e) {
+                    promise.reject("", e.getMessage());
+
+                }
+            }
+
+            @Override
+            public void onError(ErrorResponse errorResponse) {
+                promise.reject("", errorResponse.getReason());
+            }
+        });
+    }
+
+    @ReactMethod
+    public void downvoteArticlePromise(Double articleId, final Promise promise) {
+        Long artId = articleId.longValue();
+        this.provider.downvoteArticle(artId, new ZendeskCallback<ArticleVote>() {
+            @Override
+            public void onSuccess(ArticleVote article) {
+                try {
+                    promise.resolve(JSONHelper
+                            .convertJsonToMap(new JSONObject(JSONHelper.createDefaultGson().toJson(article))));
                 } catch (JSONException e) {
                     promise.reject("", e.getMessage());
 

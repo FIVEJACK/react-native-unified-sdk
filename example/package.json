@@ -8,10 +8,11 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "dev": "yarn tsc && cd android && gradlew clean && cd .. && react-native run-android"
+    "dev": "yarn tsc && cd android && gradlew clean && cd .. && react-native run-android",
+    "dev-apk": "yarn tsc && cd android && SET ENVFILE=.env.local && gradlew assembleRelease"
   },
   "dependencies": {
-    "@itemku/react-native-unified-sdk": "^0.0.1",
+    "@itemku/react-native-unified-sdk": "^0.4.0",
     "react": "16.11.0",
     "react-native": "0.62.2"
   },
