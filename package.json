@@ -1,7 +1,7 @@
 {
   "name": "@itemku/react-native-unified-sdk",
   "title": "React Native Unified SDK",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Zendesk Unified SDK for React Native",
   "main": "index.js",
   "typings": "index.d.ts",

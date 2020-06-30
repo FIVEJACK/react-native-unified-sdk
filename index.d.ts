@@ -103,7 +103,7 @@ export const HelpCenterProvider: {
   getAllCategories: () => Promise<Array<Category>>;
   getSections: (categoryId: number) => Promise<Array<Section>>;
   getArticles: (sectionId: number) => Promise<Array<Article>>;
-  getSuggestedArticles: (query: string) => Promise<Array<SuggestedArticle>>;
+  getSuggestedArticles: (query: string) => Promise<SuggestedArticle>;
   downvoteArticle: (articleId: number) => Promise<Array<ArticleVote>>;
-  upvoteArticle: (articleId: number) => Promise<Array<anArticleVote>>;
+  upvoteArticle: (articleId: number) => Promise<Array<ArticleVote>>;
 };

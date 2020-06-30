@@ -12,7 +12,7 @@
     "dev-apk": "yarn tsc && cd android && SET ENVFILE=.env.local && gradlew assembleRelease"
   },
   "dependencies": {
-    "@itemku/react-native-unified-sdk": "^0.4.0",
+    "@itemku/react-native-unified-sdk": "^0.4.1",
     "react": "16.11.0",
     "react-native": "0.62.2"
   },
